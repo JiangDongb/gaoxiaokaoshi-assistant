@@ -1,0 +1,38 @@
+{
+  "site": {
+    "base_url": "http://www.gaoxiaokaoshi.com",
+    "login_page": "/Login.aspx",
+    "browser": "edge",
+    "headless": true
+  },
+  "concurrency": {
+    "max_accounts": 2,
+    "parallel_lessons": 36,
+    "action_timeout_sec": 20,
+    "page_timeout_sec": 60,
+    "cdp_base_port": 9400
+  },
+  "video": {
+    "mode": "full",
+    "max_watch_sec": 7200,
+    "poll_sec": 90,
+    "stall_tolerance_min": 8
+  },
+  "homework": {
+    "passes": 2,
+    "first_pass_guess": "C",
+    "answers_file": "answers.json",
+    "min_score": 60
+  },
+  "accounts": [
+    {
+      "name": "示例账号",
+      "username": "请在此填写用户名",
+      "password": "请在此填写密码",
+      "plan": "军事理论",
+      "lessons": [],
+      "watch_videos": true,
+      "do_homework": true
+    }
+  ]
+}

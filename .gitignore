@@ -1,0 +1,13 @@
+node_modules/
+profiles/
+logs/
+answers.json
+answers.*.json
+*.log
+*.tmp
+# 含个人数据的抓取页面快照，不公开
+tools/reference/
+# 本机生成物
+/高校考试助手.exe
+# 含真实账号，不提交
+/config.json
