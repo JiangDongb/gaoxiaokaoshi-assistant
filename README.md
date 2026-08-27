@@ -159,17 +159,18 @@ config.example.json       公开配置模板（占位账号，可提交）
 build.bat                 一键编译 GUI exe
 高校考试助手.exe          图形界面程序（本地生成）
 gui/Program.cs            GUI 源码（WinForms，C#）
+lib/cdp.mjs               Chrome DevTools 协议客户端（驱动本机浏览器）
 lib/config.mjs            配置加载/校验
 lib/answers.mjs           答案库（第一遍收集 → 第二遍使用）
-lib/browser.mjs           浏览器实例与标签页封装（CDP）
+lib/browser.mjs           浏览器实例与标签页封装
 lib/courses.mjs           课时发现/解析/过滤/进度查询
 lib/study.mjs             视频学习心跳与完成判定
 lib/exam.mjs              作业两遍制（兼容不同考试页结构）
 lib/account_worker.mjs    单账号全流程编排
 lib/util.mjs              日志/重试/并发限制器
-tools/                    探测与调试脚本（开发用）
 LICENSE                   MIT
 .gitignore                忽略本机生成物与含账号的 config.json
+build_release.bat         一键打包"免安装 Node"离线版
 ```
 
 ---
