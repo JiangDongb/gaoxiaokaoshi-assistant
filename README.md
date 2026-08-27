@@ -94,7 +94,9 @@ csc /nologo /target:winexe /out:高校考试助手.exe /r:System.Windows.Forms.d
 2. 下载 Node.js 可移植版到 `node\`；
 3. 组装成 `高校考试网学习助手-离线版-v1.0.0.zip`。
 
-使用者解压后双击 `高校考试助手.exe` 即可运行，**无需安装 Node**（浏览器用 Win10/11 自带的 Edge）。
+使用者解压后双击 `高校考试助手.exe` 即可运行，**无需安装 Node**（浏览器用 Win10/11 自带的 Edge）。包内只含运行必需文件（exe、`main.mjs`、`lib\`、`tools\cdp.mjs`、`node\node.exe`、README/LICENSE），不含源码/构建脚本/个人账号。
+
+**在"空白电脑"上运行的要求**：Windows 10/11（.NET Framework 4.x、Edge 均系统自带）+ 可访问目标网站。请把压缩包解压到**可写目录**（如桌面/文档/下载）再双击 exe；浏览器的临时 profile 会写入系统临时目录，不依赖解压位置。
 
 ---
 

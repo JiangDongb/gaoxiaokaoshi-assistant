@@ -42,21 +42,17 @@ if not exist "%ROOT%node\node.exe" (
 echo ==== 3/3  组装并打包 ====
 set STAGE=%ROOT%_release_setup2\gaoxiaokaoshi-assistant
 if exist "%ROOT%_release_setup2" rmdir /s /q "%ROOT%_release_setup2"
-mkdir "%STAGE%\gui" 2>nul
 mkdir "%STAGE%\lib" 2>nul
 mkdir "%STAGE%\tools" 2>nul
 mkdir "%STAGE%\node" 2>nul
 
+rem 只打包运行必需的内容（不含源码/构建脚本/探测脚本）
 copy "%ROOT%高校考试助手.exe" "%STAGE%\" >nul
 copy "%ROOT%main.mjs" "%STAGE%\" >nul
-copy "%ROOT%build.bat" "%STAGE%\" >nul
-copy "%ROOT%config.example.json" "%STAGE%\" >nul
 copy "%ROOT%README.md" "%STAGE%\" >nul
 copy "%ROOT%LICENSE" "%STAGE%\" >nul
-copy "%ROOT%gui\Program.cs" "%STAGE%\gui\" >nul
 copy "%ROOT%lib\*.mjs" "%STAGE%\lib\" >nul
 copy "%ROOT%tools\cdp.mjs" "%STAGE%\tools\" >nul
-copy "%ROOT%tools\probe_cdp.mjs" "%STAGE%\tools\" >nul
 copy "%ROOT%node\node.exe" "%STAGE%\node\" >nul
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path '%ROOT%_release_setup2\*' -DestinationPath '%OUT_ZIP%' -CompressionLevel Optimal"
