@@ -43,12 +43,12 @@
 
 | 依赖 | 说明 |
 | --- | --- |
-| Node.js ≥ 22 | 执行自动化逻辑（CLI 与 GUI 均依赖） |
-| Microsoft Edge 或 Google Chrome | 被程序驱动的浏览器（默认 Edge） |
+| Node.js ≥ 22 | 执行自动化逻辑（CLI 与 GUI 均依赖）；**使用离线包可免安装** |
+| Microsoft Edge 或 Google Chrome | 被程序驱动的浏览器（默认 Edge，Win10/11 自带） |
 | Windows | GUI exe 使用 .NET Framework 4.x（Win10/11 自带） |
 | 网络 | 可访问 `http://www.gaoxiaokaoshi.com`（仅 HTTP） |
 
-> 图形界面 exe 只是前端：它生成 `config.json` 并调用 `node main.mjs`，因此运行机器须已安装 Node 与浏览器，且 `高校考试助手.exe`、`main.mjs`、`config.json` 在同一目录。
+> 图形界面 exe 只是前端：它生成 `config.json` 并调用 `node main.mjs`。若用 `build_release.bat` 打包出**离线版**（内含可移植 `node\node.exe`），则运行机器**无需安装 Node**（浏览器用系统自带的 Edge）。
 
 ---
 
@@ -86,6 +86,15 @@ copy config.example.json config.json    :: Windows
 ```bat
 csc /nologo /target:winexe /out:高校考试助手.exe /r:System.Windows.Forms.dll /r:System.Drawing.dll gui\Program.cs
 ```
+
+### 打包"免安装 Node"的离线版（推荐给普通使用者）
+
+运行 `build_release.bat`（需联网一次，用于下载可移植 Node），它会：
+1. 编译 GUI exe；
+2. 下载 Node.js 可移植版到 `node\`；
+3. 组装成 `高校考试网学习助手-离线版-v1.0.0.zip`。
+
+使用者解压后双击 `高校考试助手.exe` 即可运行，**无需安装 Node**（浏览器用 Win10/11 自带的 Edge）。
 
 ---
 

@@ -1,10 +1,12 @@
 node_modules/
+node/            # build_release.bat 下载的可移植 Node，不进仓库
 profiles/
 logs/
 answers.json
 answers.*.json
 *.log
 *.tmp
+*.zip
 # 含个人数据的抓取页面快照，不公开
 tools/reference/
 # 本机生成物

@@ -359,6 +359,14 @@ namespace GxksGui
             rtbLog.ScrollToCaret();
         }
 
+        // 选择要用的 Node：优先用随程序携带的离线 node\node.exe（无需系统安装 Node），否则回退到系统 PATH 的 node
+        string ResolveNode()
+        {
+            string bundled = Path.Combine(AppDir(), "node", "node.exe");
+            if (File.Exists(bundled)) return bundled;
+            return "node";
+        }
+
         void OnStart(object sender, EventArgs e)
         {
             if (running) { MessageBox.Show("已在运行中，请先点“停止”。", "提示"); return; }
@@ -371,7 +379,7 @@ namespace GxksGui
             try { WriteConfigFile(ConfigPath(), BuildConfigJson()); }
             catch (Exception ex) { MessageBox.Show("写入配置失败：" + ex.Message, "错误"); return; }
 
-            string node = "node";
+            string node = ResolveNode();
             try
             {
                 var psi = new ProcessStartInfo();
