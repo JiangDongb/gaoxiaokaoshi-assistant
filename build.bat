@@ -1,9 +1,11 @@
 @echo off
-rem 一键编译 高校考试助手.exe（使用 .NET Framework 自带的 C# 编译器，无需联网）
+chcp 65001 >nul
+rem 一键编译 高校考试助手.exe（用 .NET Framework 自带 C# 编译器，无需联网）
+rem 注意：本bat须以 CRLF 换行保存
 setlocal
-set CSC=C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe
-if not exist "%CSC%" set CSC=C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe
-if not exist "%CSC%" set CSC=C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe
+set "CSC=C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+if not exist "%CSC%" set "CSC=C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
+if not exist "%CSC%" set "CSC=C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
 if not exist "%CSC%" (
   echo [错误] 未找到 C# 编译器 csc.exe，请安装 .NET Framework 4.x 后重试。
   pause
