@@ -11,7 +11,7 @@ const store = new AnswerStore(cfg.homework.answers_file);
 const log = makeLogger('main');
 
 log.info('========================================');
-log.info(' 高校考试平台 功能测试自动化 (QA)');
+log.info(' 高校考试网 功能测试自动化 (QA)');
 log.info(` 账号数=${cfg.accounts.length} 并发账号=${cfg.concurrency.max_accounts} 并行课时=${cfg.concurrency.parallel_lessons}`);
 log.info(` 作业遍数=${cfg.homework.passes} 第1遍猜测=${cfg.homework.first_pass_guess} 及格线=${cfg.homework.min_score}`);
 log.info(` 视频模式=${cfg.video.mode} 答案库=${cfg.homework.answers_file}(现有 ${store.size} 题)`);

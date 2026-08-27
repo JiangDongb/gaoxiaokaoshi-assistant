@@ -1,4 +1,4 @@
-// 高校考试平台 学习助手 —— WinForms 图形界面（零依赖，用 .NET Framework 自带 csc 编译为 exe）
+// 高校考试网 学习助手 —— WinForms 图形界面（零依赖，用 .NET Framework 自带 csc 编译为 exe）
 // 编译：  build.bat （或 csc /nologo /target:winexe /out:高校考试助手.exe /r:System.Windows.Forms.dll /r:System.Drawing.dll gui\Program.cs）
 // 功能：输入账号/密码、选择课程（默认全部）→ 启动 Node 自动化并实时显示日志；设置页调整 config 参数
 using System;
@@ -107,7 +107,7 @@ namespace GxksGui
 
         public MainForm()
         {
-            Text = "高校考试平台 学习助手";
+            Text = "高校考试网 学习助手";
             Font = new Font("Microsoft YaHei", 9F);
             ClientSize = new Size(860, 724);
             MinimumSize = new Size(700, 580);
@@ -158,7 +158,7 @@ namespace GxksGui
 
         void BuildUi()
         {
-            MakeHeader("高校考试平台 学习助手", 16, 14, 400, 30);
+            MakeHeader("高校考试网 学习助手", 16, 14, 400, 30);
 
             // 账号与课程
             var gb = new GroupBox();
