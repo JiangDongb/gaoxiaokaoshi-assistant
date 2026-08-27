@@ -1,5 +1,5 @@
 node_modules/
-node/            # build_release.bat 下载的可移植 Node，不进仓库
+node/
 profiles/
 logs/
 answers.json
